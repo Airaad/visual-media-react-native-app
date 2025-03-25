@@ -3,7 +3,7 @@ import MovieList from "@/components/MovieList";
 import TvList from "@/components/TvList";
 import { fetchMovies, fetchTopRatedMovies } from "@/services/movieapi";
 import { fetchTopRatedTv, fetchTvShows } from "@/services/tvapi";
-import { ImageBackground, ScrollView, Text, View } from "react-native";
+import {  ScrollView } from "react-native";
 
 export default function Index() {
   return (

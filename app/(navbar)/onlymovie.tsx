@@ -1,12 +1,10 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import ShowMoviesOnly from "@/components/ShowMoviesOnly";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-const MoviesOnly = () => {
+export default function OnlyMovie() {
   return (
-    <View>
-      <Text>MoviesOnly</Text>
-    </View>
-  )
+    <SafeAreaView className="flex-1 bg-black">
+      <ShowMoviesOnly />
+    </SafeAreaView>
+  );
 }
-
-export default MoviesOnly

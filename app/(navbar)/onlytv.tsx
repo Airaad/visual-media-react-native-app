@@ -1,12 +1,10 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import ShowTvOnly from "@/components/ShowTvOnly";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-const TvOnly = () => {
+export default function OnlyTv() {
   return (
-    <View>
-      <Text>TvOnly</Text>
-    </View>
-  )
+    <SafeAreaView className="flex-1 bg-black">
+      <ShowTvOnly />
+    </SafeAreaView>
+  );
 }
-
-export default TvOnly

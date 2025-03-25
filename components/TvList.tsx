@@ -23,11 +23,10 @@ const TvList = ({ title, fetchFunc, paddingBottom }: TvListProps) => {
             <FlatList
               horizontal
               showsHorizontalScrollIndicator={false}
-              contentContainerStyle={{  }} //The contentContainerStyle prop in FlatList is used to style the inner content of the list, not the list container itself. It is useful when you want to control the layout inside the FlatList rather than the FlatList component itself.
               data={tvShow}
               keyExtractor={(item) => item.id.toString()}
               renderItem={({ item }) => (
-                <ContentCard title={item.name} poster={item.poster_path} />
+                <ContentCard poster={item.poster_path} />
               )}
             />
           </View>
