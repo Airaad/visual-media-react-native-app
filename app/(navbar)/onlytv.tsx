@@ -1,10 +1,12 @@
+import Navbar from "@/components/Navbar";
 import ShowTvOnly from "@/components/ShowTvOnly";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { View } from "react-native";
 
 export default function OnlyTv() {
   return (
-    <SafeAreaView className="flex-1 bg-black">
+    <View className="flex-1 bg-black">
+      <Navbar />
       <ShowTvOnly />
-    </SafeAreaView>
+    </View>
   );
 }

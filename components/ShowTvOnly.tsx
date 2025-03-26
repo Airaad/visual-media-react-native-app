@@ -25,7 +25,7 @@ const ShowTvOnly = () => {
         gap: 20,
         marginBottom: 20,
       }}
-      className="mt-2 mr-1 px-6 py-10"
+      className="mr-1 px-3"
     />
   );
 };
