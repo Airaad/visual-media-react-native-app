@@ -1,10 +1,8 @@
 import { View, Text, ImageBackground, ActivityIndicator } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
 import useFetch from "@/hooks/useFetch";
 import { fetchMovies } from "@/services/movieapi";
-import { Link, usePathname } from "expo-router";
 import Navbar from "./Navbar";
 
 const HeaderSlide = () => {
@@ -17,9 +15,9 @@ const HeaderSlide = () => {
     <>
       <Navbar />
       {loading ? (
-        <ActivityIndicator size="large" color="#ffffff" className="my-52"/>
+        <ActivityIndicator size="large" color="#ffffff" />
       ) : error ? (
-        <Text className="text-red-500 text-lg mt-10">{error?.message}</Text>
+        <Text className="text-red-500 text-lg mt-10">Error:{error?.message}</Text>
       ) : (
         <View className="w-full h-[500px] overflow-hidden px-6 rounded-xl">
           <ImageBackground

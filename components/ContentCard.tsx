@@ -1,4 +1,5 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
+
 interface MovieProps {
   poster: string;
 }

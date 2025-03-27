@@ -13,7 +13,7 @@ const TMDB_CONFIG = {
     query: string;
   }): Promise<Tv[]> => {
     const endpoint = query
-      ? `${TMDB_CONFIG.Base_url}/search/movie?query=${encodeURIComponent(query)}`
+      ? `${TMDB_CONFIG.Base_url}/search/tv?query=${encodeURIComponent(query)}`
       : `${TMDB_CONFIG.Base_url}/discover/tv?sort_by=popularity.desc`;
   
     const response = await fetch(endpoint, {

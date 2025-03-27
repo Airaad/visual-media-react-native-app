@@ -11,11 +11,13 @@ interface TvListProps {
 const TvList = ({ title, fetchFunc, paddingBottom }: TvListProps) => {
   const { data: tvShow, loading, error } = useFetch(() => fetchFunc());
   return (
-    <View  className="mt-10 px-6">
+    <View className="mt-10 px-6">
       {loading ? (
-        <ActivityIndicator size="large" color="#ffffff" className="my-52" />
+        <ActivityIndicator size="large" color="#ffffff" className="my-24" />
       ) : error ? (
-        <Text className="text-red-500 text-lg mt-10">Error: {error?.message}</Text>
+        <Text className="text-red-500 text-lg mt-10">
+          Error: {error?.message}
+        </Text>
       ) : (
         <>
           <Text className="text-white mb-5 font-bold text-xl">{title}</Text>
