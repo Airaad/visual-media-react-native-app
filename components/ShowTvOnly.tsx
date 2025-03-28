@@ -23,7 +23,11 @@ const ShowTvOnly = () => {
           showsHorizontalScrollIndicator={false}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
-            <ContentOnlyCard title={item.name} poster={item.poster_path} />
+            <ContentOnlyCard
+              title={item.name}
+              poster={item.poster_path}
+              id={item.id}
+            />
           )}
           columnWrapperStyle={{
             //Styles the rows when numColumns is used.

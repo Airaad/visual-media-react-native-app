@@ -29,7 +29,7 @@ const MovieList = ({ title, fetchFunc, paddingBottom }: MovieListProps) => {
               data={movies}
               keyExtractor={(item) => item.id.toString()}
               renderItem={({ item }) => (
-                <ContentCard poster={item.poster_path} />
+                <ContentCard poster={item.poster_path} id={item.id} />
               )}
             />
           </View>

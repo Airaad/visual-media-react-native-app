@@ -1,12 +1,18 @@
+import { useRouter } from "expo-router";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 
-interface MovieProps {
+interface CardProps {
+  id: number;
   poster: string;
 }
 
-export default function ContentCard({ poster }: MovieProps) {
+export default function ContentCard({ poster, id }: CardProps) {
+  const router = useRouter();
   return (
-    <TouchableOpacity className="mr-4 w-40">
+    <TouchableOpacity
+      className="mr-4 w-40"
+      onPress={() => router.push(`/details/${id}`)}
+    >
       <View className="rounded-xl overflow-hidden shadow-lg">
         <Image
           source={{

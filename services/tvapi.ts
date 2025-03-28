@@ -14,7 +14,7 @@ const TMDB_CONFIG = {
   }): Promise<Tv[]> => {
     const endpoint = query
       ? `${TMDB_CONFIG.Base_url}/search/tv?query=${encodeURIComponent(query)}`
-      : `${TMDB_CONFIG.Base_url}/discover/tv?sort_by=popularity.desc`;
+      : `${TMDB_CONFIG.Base_url}/discover/tv?sort_by=popularity.desc&include_adult=true`;
   
     const response = await fetch(endpoint, {
       method: "GET",
