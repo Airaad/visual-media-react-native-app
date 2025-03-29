@@ -25,6 +25,20 @@ export default function RootLayout() {
             headerShown: false,
           }}
         />
+
+        <Stack.Screen
+          name="movie-details/[id]"
+          options={{
+            headerShown: false,
+          }}
+        />
+
+        <Stack.Screen
+          name="tv-details/[id]"
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack>
     </View>
   );

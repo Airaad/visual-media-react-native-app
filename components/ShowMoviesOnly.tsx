@@ -2,7 +2,7 @@ import { View, Text, FlatList, ActivityIndicator } from "react-native";
 import React from "react";
 import { fetchMovies, fetchTopRatedMovies } from "@/services/movieapi";
 import useFetch from "@/hooks/useFetch";
-import ContentOnlyCard from "./ContentOnlyCard";
+import { MovieContentOnlyCard } from "./ContentOnlyCard";
 
 const ShowMoviesOnly = () => {
   const {
@@ -23,7 +23,7 @@ const ShowMoviesOnly = () => {
           showsHorizontalScrollIndicator={false}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
-            <ContentOnlyCard
+            <MovieContentOnlyCard
               title={item.title}
               poster={item.poster_path}
               id={item.id}

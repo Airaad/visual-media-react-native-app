@@ -1,6 +1,6 @@
 import { View, Text, FlatList, ActivityIndicator } from "react-native";
 import React from "react";
-import ContentCard from "./ContentCard";
+import {TvContentCard} from "./ContentCard";
 import useFetch from "@/hooks/useFetch";
 
 interface TvListProps {
@@ -28,7 +28,7 @@ const TvList = ({ title, fetchFunc, paddingBottom }: TvListProps) => {
               data={tvShow}
               keyExtractor={(item) => item.id.toString()}
               renderItem={({ item }) => (
-                <ContentCard poster={item.poster_path} id={item.id} />
+                <TvContentCard poster={item.poster_path} id={item.id} />
               )}
             />
           </View>

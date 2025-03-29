@@ -2,7 +2,7 @@ import { View, Text, FlatList, ActivityIndicator } from "react-native";
 import React from "react";
 import useFetch from "@/hooks/useFetch";
 import { fetchTvShows } from "@/services/tvapi";
-import ContentOnlyCard from "./ContentOnlyCard";
+import { TvContentOnlyCard } from "./ContentOnlyCard";
 
 const ShowTvOnly = () => {
   const {
@@ -23,7 +23,7 @@ const ShowTvOnly = () => {
           showsHorizontalScrollIndicator={false}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
-            <ContentOnlyCard
+            <TvContentOnlyCard
               title={item.name}
               poster={item.poster_path}
               id={item.id}
