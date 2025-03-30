@@ -8,7 +8,7 @@ import {
 import React, { useEffect, useState } from "react";
 import useFetch from "@/hooks/useFetch";
 import { fetchSearch } from "@/services/searchapi";
-import ContentOnlyCard from "@/components/ContentOnlyCard";
+import SearchContentCard from "@/components/SearchContentCard";
 import Navbar from "@/components/Navbar";
 
 const Search = () => {
@@ -40,8 +40,10 @@ const Search = () => {
         keyExtractor={(item) => item.id.toString()}
         contentContainerStyle={{ paddingBottom: 30 }}
         renderItem={({ item }) => (
-          <ContentOnlyCard
+          <SearchContentCard
+            id={item.id}
             title={item.title || item.name}
+            media_type={item.media_type}
             poster={item.poster_path}
           />
         )}
