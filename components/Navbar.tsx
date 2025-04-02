@@ -1,15 +1,16 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { Link, usePathname } from "expo-router";
+import { Link, usePathname, useRouter } from "expo-router";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const router = useRouter()
   return (
     <View className="w-full pt-10">
       <View className="flex-row justify-between items-center p-6">
         <Text className="text-[#1CEE87] font-semibold text-3xl">FlexHive</Text>
-        <FontAwesome size={33} name="user-circle" color="#1CEE87" />
+        {/* <FontAwesome size={33} name="user-circle" color="#1CEE87" onPress={()=>router.push("/login")}/> */}
       </View>
 
       <View className="flex-row gap-2 px-6 mb-10">

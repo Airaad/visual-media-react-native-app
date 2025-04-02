@@ -1,9 +1,11 @@
 import { Stack } from "expo-router";
 import "./global.css";
 import { StatusBar, View } from "react-native";
-
+import AuthProvider from "@/context/AuthProvider";
+//Flexhivesupabase
 export default function RootLayout() {
   return (
+    <AuthProvider>
     <View className="flex-1">
       <StatusBar
         translucent
@@ -39,7 +41,15 @@ export default function RootLayout() {
             headerShown: false,
           }}
         />
+
+        <Stack.Screen
+          name="(auth)"
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack>
     </View>
+    </AuthProvider>
   );
 }
