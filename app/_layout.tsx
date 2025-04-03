@@ -2,7 +2,7 @@ import { Stack } from "expo-router";
 import "./global.css";
 import { StatusBar, View } from "react-native";
 import AuthProvider from "@/context/AuthProvider";
-//Flexhivesupabase
+
 export default function RootLayout() {
   return (
     <AuthProvider>

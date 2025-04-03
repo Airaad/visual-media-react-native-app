@@ -61,7 +61,11 @@ export default function SignIn({ onSwitchAuth }: { onSwitchAuth: () => void }) {
 
       <Text className="mt-5 text-white text-center">
         Don't have an account?{" "}
-        <Text className="font-semibold text-blue-500 text-lg" onPress={onSwitchAuth}>
+        <Text
+          disabled={loading}
+          className="font-semibold text-blue-500 text-lg"
+          onPress={onSwitchAuth}
+        >
           Sign Up
         </Text>
       </Text>

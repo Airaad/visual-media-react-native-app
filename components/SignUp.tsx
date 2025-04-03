@@ -24,7 +24,7 @@ export default function SignUp({ onSwitchAuth }: { onSwitchAuth: () => void }) {
     if (error) {
       Alert.alert("Error", error.message);
     } else {
-      Alert.alert("Success", "Check your email for confirmation!");
+      Alert.alert("Success", "Account created successfully");
     }
     setLoading(false);
   }
@@ -64,6 +64,7 @@ export default function SignUp({ onSwitchAuth }: { onSwitchAuth: () => void }) {
         Already have an account?{" "}
         <Text
           className="font-semibold text-blue-500 text-lg"
+          disabled={loading}
           onPress={onSwitchAuth}
         >
           Sign In
@@ -72,4 +73,3 @@ export default function SignUp({ onSwitchAuth }: { onSwitchAuth: () => void }) {
     </View>
   );
 }
-
