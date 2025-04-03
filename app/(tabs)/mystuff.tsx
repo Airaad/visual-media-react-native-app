@@ -6,7 +6,7 @@ import { Redirect } from 'expo-router';
 const MyStuff = () => {
   const { isAuthenticated } = useAuth();
   if (!isAuthenticated) {
-    return <Redirect href="/login"/>;
+    return <Redirect href="/authscreen"/>;
   }
   return (
     <View>

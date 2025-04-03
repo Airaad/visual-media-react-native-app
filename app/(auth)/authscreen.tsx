@@ -7,7 +7,7 @@ export default function AuthScreen() {
   const [isSignIn, setIsSignIn] = useState(true)
 
   return (
-    <View style={styles.container}>
+    <View className='bg-black flex-1 justify-center p-20'>
       {isSignIn ? (
         <SignIn onSwitchAuth={() => setIsSignIn(false)} />
       ) : (
@@ -17,10 +17,3 @@ export default function AuthScreen() {
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: 20,
-  },
-})
