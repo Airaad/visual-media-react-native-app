@@ -12,6 +12,7 @@ const Profile = () => {
   const { session } = useAuth();
   const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
+  const [newPassword, setNewPassword] = useState("");
 
   useEffect(() => {
     if (session) getProfile();
@@ -40,7 +41,16 @@ const Profile = () => {
       setLoading(false);
     }
   }
-  async function updateProfile({ username }: { username: string }) {
+  async function updateProfile({
+    username,
+    newPassword,
+  }: {
+    username: string;
+    newPassword: string;
+  }) {
+    if((username !== "" && username.length < 5) || (newPassword !== "" && newPassword.length < 5)){
+      return Alert.alert("Too short credentials")
+    }
     try {
       setLoading(true);
       if (!session?.user) throw new Error("No user on the session!");
@@ -50,6 +60,21 @@ const Profile = () => {
         updated_at: new Date(),
       };
       const { error } = await supabase.from("profiles").upsert(updates);
+
+      if (newPassword !== "") {
+        try {
+          const { data, error } = await supabase.auth.updateUser({
+            password: newPassword,
+          });
+          setNewPassword("");
+          Alert.alert("Password changed successfully");
+        } catch (error) {
+          if (error instanceof Error) {
+            Alert.alert(error.message);
+          }
+        }
+      }
+
       if (error) {
         throw error;
       }
@@ -78,13 +103,21 @@ const Profile = () => {
       <TextInput
         onChangeText={(text) => setUsername(text)}
         value={username}
-        placeholder="username"
+        placeholder="Set or change username"
         autoCapitalize="none"
+        maxLength={10}
+        className="rounded-lg w-[350px] h-[50px] px-5 text-black bg-gray-200 border-1"
+      />
+      <TextInput
+        onChangeText={(text) => setNewPassword(text)}
+        value={newPassword}
+        placeholder="Set a new password"
+        maxLength={16}
         className="rounded-lg w-[350px] h-[50px] px-5 text-black bg-gray-200 border-1"
       />
 
       <Pressable
-        onPress={() => updateProfile({ username })}
+        onPress={() => updateProfile({ username, newPassword })}
         disabled={loading}
         className="bg-green-500 w-[200px] h-[50px] rounded-full items-center justify-center"
       >
